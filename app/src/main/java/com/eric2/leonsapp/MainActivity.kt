@@ -3,20 +3,21 @@ package com.eric2.leonsapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.eric2.leonsapp.ui.theme.LeonsAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,7 +38,9 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun finalView(){
-    Column() {
+    Column(modifier = Modifier.fillMaxSize().background(color = Color.LightGray),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center) {
         firstText("The chairman", "Leon marie")
         secondText("0708332509", "leonmarienga@gmail.com", "leommari@linkedin.com")
     }
@@ -46,27 +49,27 @@ fun finalView(){
 
 @Composable
 fun firstText(title:String, name:String){
-    Column() {
+    Column( horizontalAlignment = Alignment.CenterHorizontally) {
         mainImage()
-        Text(text = title)
-        Text(text = name)
+        Text(text = title, fontSize = 50.sp)
+        Text(text = name, fontSize = 40.sp)
     }
 
 }
 @Composable
 fun secondText(one:String, two:String, three:String){
-    Column() {
-        Row() {
+    Column(modifier = Modifier.padding(top = 60.dp)) {
+        Row(modifier = Modifier.padding(vertical = 10.dp)) {
             firstImage()
-            Text(text = one)
+            Text(text = one, fontSize = 25.sp, modifier = Modifier.padding(start = 7.dp))
         }
-        Row() {
+        Row(modifier = Modifier.padding(vertical = 10.dp)) {
             secondImage()
-            Text(text = two)
+            Text(text = two, fontSize = 25.sp, modifier = Modifier.padding(start = 7.dp))
         }
-        Row() {
+        Row(modifier = Modifier.padding(vertical = 10.dp)) {
             thirdImage()
-            Text(text = three)
+            Text(text = three, fontSize = 25.sp, modifier = Modifier.padding(start = 7.dp))
         }
     }
 
@@ -78,7 +81,7 @@ fun mainImage(){
     Image(
         painter = image,
         contentDescription = null,
-        modifier = Modifier.height(50.dp)
+        modifier = Modifier.height(300.dp).width(300.dp).padding(bottom = 10.dp).border(BorderStroke(5.dp, SolidColor(Color.Black))
     )
 }
 
@@ -88,7 +91,7 @@ fun firstImage(){
     Image(
         painter = image,
         contentDescription = null,
-        modifier = Modifier.height(20.dp)
+        modifier = Modifier.height(50.dp)
     )
 }
 
@@ -98,7 +101,7 @@ fun secondImage(){
     Image(
         painter = image,
         contentDescription = null,
-        modifier = Modifier.height(20.dp)
+        modifier = Modifier.height(50.dp)
     )
 }
 
@@ -108,7 +111,7 @@ fun thirdImage(){
     Image(
         painter = image,
         contentDescription = null,
-        modifier = Modifier.height(20.dp)
+        modifier = Modifier.height(50.dp)
     )
 }
 
