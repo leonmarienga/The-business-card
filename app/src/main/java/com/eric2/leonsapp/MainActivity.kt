@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.eric2.leonsapp.ui.theme.LeonsAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -75,7 +77,8 @@ fun mainImage(){
     val image = painterResource(R.drawable.leons_imange)
     Image(
         painter = image,
-        contentDescription = null
+        contentDescription = null,
+        modifier = Modifier.height(50.dp)
     )
 }
 
@@ -84,7 +87,8 @@ fun firstImage(){
     val image = painterResource(R.drawable._55705)
     Image(
         painter = image,
-        contentDescription = null
+        contentDescription = null,
+        modifier = Modifier.height(20.dp)
     )
 }
 
@@ -93,7 +97,8 @@ fun secondImage(){
     val image = painterResource(R.drawable._61188)
     Image(
         painter = image,
-        contentDescription = null
+        contentDescription = null,
+        modifier = Modifier.height(20.dp)
     )
 }
 
@@ -103,7 +108,7 @@ fun thirdImage(){
     Image(
         painter = image,
         contentDescription = null,
-        contentScale = ContentScale.Fit
+        modifier = Modifier.height(20.dp)
     )
 }
 
